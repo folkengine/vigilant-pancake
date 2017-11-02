@@ -1,2 +1,2 @@
-# vigilant-pancake
+# vigilant-waffle
 Baby Sitter Kata 
