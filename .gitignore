@@ -102,3 +102,6 @@ ENV/
 
 .idea/
 vigilant-waffle/
+
+# vim swap files
+.*.swp
