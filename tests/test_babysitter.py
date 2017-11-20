@@ -14,7 +14,7 @@ class TestBabySitter:
         assert doubtfire.start_time == self.billable_start_time
 
     early_times = [
-        datetime.time(16, 59), datetime.time(16,29)
+        datetime.time(16, 59), datetime.time(16, 29)
     ]
 
     @pytest.mark.parametrize("start", early_times)
