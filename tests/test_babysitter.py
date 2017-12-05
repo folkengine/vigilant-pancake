@@ -31,3 +31,21 @@ class TestBabySitter:
         doubtfire = babysitter.BabySitter(start_time)
 
         assert doubtfire.start_time == self.earliest_billable_start_time
+
+    normal_leave_times = ( # Normal means not after 4:00AM.
+        datetime.time(17, 1),
+        datetime.time(19, 0),
+        datetime.time(23, 0),
+        datetime.time(23, 59),
+        datetime.time(0, 0),
+        datetime.time(0, 1),
+        datetime.time(1, 0),
+        datetime.time(3, 59),
+        datetime.time(4, 0),
+    )
+
+    @pytest.mark.parametrize("leave_time", normal_leave_times)
+    def test_babysitter_starttime_early(self, leave_time):
+        doubtfire = babysitter.BabySitter(leave_time)
+
+        assert doubtfire.leave_time == self.leave_time
