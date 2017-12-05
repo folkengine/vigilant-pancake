@@ -9,7 +9,10 @@ class TestBabySitter:
     earliest_billable_start_time = datetime.time(17, 0)
 
     on_times = [
-        earliest_billable_start_time, datetime.time(17, 1), datetime.time(17, 29), datetime.time(18, 29)
+        earliest_billable_start_time,
+        datetime.time(17, 1),
+        datetime.time(17, 29),
+        datetime.time(18, 29),
     ]
 
     @pytest.mark.parametrize("start", on_times)
@@ -19,7 +22,8 @@ class TestBabySitter:
         assert doubtfire.start_time == start
 
     early_times = [
-        datetime.time(16, 59), datetime.time(16, 29)
+        datetime.time(16, 59),
+        datetime.time(16, 29),
     ]
 
     @pytest.mark.parametrize("start", early_times)
