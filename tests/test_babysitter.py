@@ -6,10 +6,10 @@ import babysitter
 
 class TestBabySitter:
 
-    billable_start_time = datetime.time(17, 0)
+    earliest_billable_start_time = datetime.time(17, 0)
 
     on_times = [
-        billable_start_time, datetime.time(17, 1), datetime.time(17, 29), datetime.time(18, 29)
+        earliest_billable_start_time, datetime.time(17, 1), datetime.time(17, 29), datetime.time(18, 29)
     ]
 
     @pytest.mark.parametrize("start", on_times)
@@ -26,4 +26,4 @@ class TestBabySitter:
     def test_babysitter_starttime_early(self, start):
         doubtfire = babysitter.BabySitter(start)
 
-        assert doubtfire.start_time == self.billable_start_time
+        assert doubtfire.start_time == self.earliest_billable_start_time
